@@ -2524,7 +2524,6 @@ def deletephoto():
         login()
 
     os.system('reset')
-	global token , WT
 
 	print '\r[*] all id successfully retrieved                 '
 	print '[*] Start'
