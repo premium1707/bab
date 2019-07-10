@@ -2069,7 +2069,7 @@ def menu_bot():
     print '\x1b[1;97m\xe2\x95\x91--\x1b[1;91m> \x1b[1;92m5.\x1b[1;97m Mass delete Post'
     print '\x1b[1;97m\xe2\x95\x91--\x1b[1;91m> \x1b[1;92m6.\x1b[1;97m Mass accept friend'
     print '\x1b[1;97m\xe2\x95\x91--\x1b[1;91m> \x1b[1;92m7.\x1b[1;97m Mass delete friend'
-    print '\x1b[1;97m\xe2\x95\x91--\x1b[1;91m> \x1b[1;92m8.\x1b[1;97m Mass delete Photo Album'
+    print '\x1b[1;97m\xe2\x95\x91--\x1b[1;91m> \x1b[1;93m8.\x1b[1;97m Mass delete Photo Album (closed)'
     print '\x1b[1;97m\xe2\x95\x91--\x1b[1;91m> \x1b[1;91m0.\x1b[1;97m Back'
     print '\xe2\x95\x91'
     bot_pilih()
