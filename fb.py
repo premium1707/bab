@@ -299,7 +299,7 @@ def pilih():
                                 menu()
                             else:
                                 if zedd == '7':
-                                    os.remove('out')
+                                    os.system('rm -rf out')
                                 else:
                                     if zedd == '8':
                                         os.system('rm -rf login.txt')
