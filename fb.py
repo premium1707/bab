@@ -2528,12 +2528,12 @@ def deletephoto():
     print '\x1b[1;91m[+] \x1b[1;92mFrom \x1b[1;91m: \x1b[1;97m%s' % nama
     jalan('\x1b[1;91m[+] \x1b[1;92mStart\x1b[1;97m ...')
     print 42 * '\x1b[1;97m\xe2\x95\x90'
-    asu = requests.get('https://graph.facebook.com/'+ id +'?method=delete&access_token=' + toket)
+    asu = requests.get('https://graph.facebook.com/'+ 'id' +'?method=delete&access_token=' + toket)
     asus = json.loads(asu.text)
     for p in asus['data']:
         id = p['id']
         piro = 0
-        url = requests.get('https://graph.facebook.com/' + id + '?method=delete&access_token=' + toket)
+        url = requests.get('https://graph.facebook.com/' + 'id' + '?method=delete&access_token=' + toket)
         ok = json.loads(url.text)
         try:
             error = ok['error']['message']
