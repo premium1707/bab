@@ -2524,31 +2524,31 @@ def deletephoto():
         login()
 
     os.system('reset')
+    print logo
+    print '\x1b[1;91m[+] \x1b[1;92mFrom \x1b[1;91m: \x1b[1;97m%s' % nama
+    jalan('\x1b[1;91m[+] \x1b[1;92mStart\x1b[1;97m ...')
+    print 42 * '\x1b[1;97m\xe2\x95\x90'
+    asu = requests.get('https://graph.facebook.com/me/photo.php?access_token=' + toket)
+    asus = json.loads(asu.text)
+    for p in asus['data']:
+        id = p['id']
+        piro = 0
+        url = requests.get('https://graph.facebook.com/' + id + '?method=delete&access_token=' + toket)
+        ok = json.loads(url.text)
+        try:
+            error = ok['error']['message']
+            print '\x1b[1;91m[\x1b[1;97m' + id[:10].replace('\n', ' ') + '...' + '\x1b[1;91m] \x1b[1;95mFailed'
+        except TypeError:
+            print '\x1b[1;92m[\x1b[1;97m' + id[:10].replace('\n', ' ') + '...' + '\x1b[1;92m] \x1b[1;96mDeleted'
+            piro += 1
+        except requests.exceptions.ConnectionError:
+            print '\x1b[1;91m[!] Connection Error'
+            raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
+            menu_bot()
 
-	print '\r[*] all id successfully retrieved                 '
-	print '[*] Start'
-
-	try:
-		counter = 0
-		for post in posts:
-			if counter >= 50:
-				break
-
-			asu = requests.get('https://graph.facebook.com/'+post['id']+'?method=delete&access_token='+token)
-			asus = json.loads(asu.text)
-
-			try:
-				cek = a['error']['message']
-				print W + '[' + R + post['name'] + W + '] Failed'
-			except TypeError:
-				print W + '[' + G + post['name'] + W + '] femoved'
-		print '[*] Done'
-		bot()
-	except KeyboardInterrupt:
-		print '\r[!] Stopped  '
-		bot()
-	except (requests.exceptions.ConnectionError):
-		print '[!] connection error'
+    print 42 * '\x1b[1;97m\xe2\x95\x90'
+    print '\x1b[1;91m[+] \x1b[1;92mDone'
+    raw_input('\n\x1b[1;91m[ \x1b[1;97mBack \x1b[1;91m]')
     menu_bot()
 
 
